@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050608"><meta name="color-scheme" content="dark">
+<title>Do AI crawlers run JavaScript? · Yar (design mock-up)</title>
+<meta name="description" content="The claim that AI crawlers do not run JavaScript, separated into three fetch paths.">
+<link rel="icon" href="assets/brand/mark-y.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<script>document.documentElement.classList.add('js');if(/static/.test(location.search)||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('static')</script>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/familjen-grotesk.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-tight-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-nav="aeo">
+<a class="sr" href="#main">Skip to content</a>
+<div class="cur" id="cur" aria-hidden="true"><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="cy"><svg viewBox="0 0 160 169" aria-hidden="true"><path d="M158.983 4.29278C159.729 5.6484 160.064 7.07933 159.99 8.58556C159.915 10.0918 159.43 11.4474 158.535 12.6524L96.5582 103.027V161.092C96.5582 163.201 95.7751 165.046 94.2089 166.628C92.6427 168.209 90.8155 169 88.7272 169H71.4988C69.2614 169 67.3596 168.209 65.7934 166.628C64.2271 165.046 63.444 163.201 63.444 161.092V94.8931C63.444 93.3868 63.9661 91.8806 65.0102 90.3743L124.75 3.38904C125.496 2.33467 126.428 1.50624 127.547 0.903743C128.666 0.301247 129.896 0 131.239 0H152.047C153.539 0 154.918 0.376559 156.186 1.12968C157.454 1.8828 158.386 2.93717 158.983 4.29278ZM64.7865 53.9987C64.1898 55.3543 63.2576 56.4087 61.9897 57.1618C60.7218 57.9149 59.342 58.2914 57.8504 58.2914H37.0422C34.3572 58.2914 32.1198 57.1618 30.3298 54.9024L1.24303 12.6524C0.49721 11.4474 0.0870118 10.0918 0.0124303 8.58556C-0.0621513 7.07933 0.198884 5.6484 0.795536 4.29278C1.39219 2.93717 2.32446 1.8828 3.59234 1.12968C4.86023 0.376559 6.23999 0 7.73162 0H28.7636C31.2994 0 33.4622 1.12968 35.2522 3.38904L64.339 45.639C65.0848 46.844 65.495 48.1996 65.5696 49.7059C65.6442 51.2121 65.3832 52.6431 64.7865 53.9987Z" fill="currentColor"/></svg></span><span class="cl">Yar · Dubai</span><span class="cl cr">Do AI crawlers run JavaScript?</span></div>
+<header class="hdr">
+  <a class="logo" href="https://yaroshidi.github.io/yar-trionn-preview/" aria-label="Yar, home"><svg viewBox="0 0 160 169" aria-hidden="true"><path d="M158.983 4.29278C159.729 5.6484 160.064 7.07933 159.99 8.58556C159.915 10.0918 159.43 11.4474 158.535 12.6524L96.5582 103.027V161.092C96.5582 163.201 95.7751 165.046 94.2089 166.628C92.6427 168.209 90.8155 169 88.7272 169H71.4988C69.2614 169 67.3596 168.209 65.7934 166.628C64.2271 165.046 63.444 163.201 63.444 161.092V94.8931C63.444 93.3868 63.9661 91.8806 65.0102 90.3743L124.75 3.38904C125.496 2.33467 126.428 1.50624 127.547 0.903743C128.666 0.301247 129.896 0 131.239 0H152.047C153.539 0 154.918 0.376559 156.186 1.12968C157.454 1.8828 158.386 2.93717 158.983 4.29278ZM64.7865 53.9987C64.1898 55.3543 63.2576 56.4087 61.9897 57.1618C60.7218 57.9149 59.342 58.2914 57.8504 58.2914H37.0422C34.3572 58.2914 32.1198 57.1618 30.3298 54.9024L1.24303 12.6524C0.49721 11.4474 0.0870118 10.0918 0.0124303 8.58556C-0.0621513 7.07933 0.198884 5.6484 0.795536 4.29278C1.39219 2.93717 2.32446 1.8828 3.59234 1.12968C4.86023 0.376559 6.23999 0 7.73162 0H28.7636C31.2994 0 33.4622 1.12968 35.2522 3.38904L64.339 45.639C65.0848 46.844 65.495 48.1996 65.5696 49.7059C65.6442 51.2121 65.3832 52.6431 64.7865 53.9987Z" fill="currentColor"/></svg>YAR<sup>®</sup></a>
+  <div class="hdr-r">
+    <span class="dotchip" title="Taking new projects" aria-hidden="true"><i></i></span>
+    <a class="pill fill" href="https://cal.com/yaroshidi/discovery">Book a call</a>
+    <button class="pill" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu <span class="bars"><i></i><i></i></span></button>
+  </div>
+</header>
+<div class="veil" id="veil"></div>
+<aside class="menu" id="menu" aria-label="Menu">
+  <div class="close"><button class="pill" id="menuClose">Close ✕</button></div>
+  <div>
+    <nav>
+      <a data-k="home" href="https://yaroshidi.github.io/yar-trionn-preview/">Home</a>
+      <a data-k="services" href="services.html">Services</a>
+      <a data-k="projects" href="projects.html">Projects</a>
+      <a data-k="aeo" href="https://yar.website/aeo">AEO</a>
+      <a data-k="about" href="about.html">About</a>
+    </nav>
+    <a class="chip" href="answers.html" data-ask-open><span class="star">✦</span>&nbsp; Ask Yar a question</a>
+  </div>
+  <div class="meta">
+    <div><div class="cap">Business enquiry</div><a href="mailto:yar@yar.website">E.&nbsp;&nbsp; yar@yar.website</a><br><a href="https://cal.com/yaroshidi/discovery">C.&nbsp;&nbsp; Book your free 30-minute call</a></div>
+    <div><div class="cap">Social</div><div class="soc"><a href="https://www.linkedin.com/in/yaroshidi/">LinkedIn</a><a href="https://www.youtube.com/@yaroshidi">YouTube</a><a href="https://github.com/yaroshidi">GitHub</a><a href="https://webflow.com/@yar">Webflow</a></div></div>
+  </div>
+</aside>
+<main id="main">
+<div class="prog" aria-hidden="true"></div>
+<section class="art-hero"><div class="in"><div>
+ <nav class="crumb mono intro-rv" aria-label="Breadcrumb"><a href="https://yaroshidi.github.io/yar-trionn-preview/">Yar</a><i>/</i><a href="https://yar.website/resources">Resources</a><i>/</i><span>AEO</span></nav>
+ <p class="meta mono intro-rv" style="margin-top:28px"><time datetime="2026-08-06">6 August 2026</time><span>9 min read</span><span class="tg">AEO</span></p>
+ <h1 class="display">Do AI crawlers run JavaScript?</h1>
+ <p class="lead intro-rv">There is a sentence in almost every AEO article, and I had it on this site too: most AI crawlers do not execute JavaScript, so client-side content is invisible to them. It is close enough to be useful and wrong enough to send you after the wrong problem.</p>
+ <p class="by intro-rv"><span class="face"><img src="assets/brand/portrait.jpg" alt=""></span>Written by Yar</p>
+</div></div></section>
+<div class="blinds" aria-hidden="true" style="--from:#050608;--to:#EDEDEB"><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i></div>
+<section class="article light"><div class="in">
+ <nav class="toc" aria-label="On this page"><p class="mono lbl">On this page</p><ol><li class=on><a href="#three-fetch-paths">Three fetch paths</a></li><li><a href="#why-the-google-part-matters-most">Why the Google part matters most</a></li><li><a href="#the-evidence-is-thinner-than-the-confidence">The evidence is thinner than the confidence</a></li><li><a href="#what-i-check-on-the-page-itself">What I check on the page itself</a></li><li><a href="#the-robots-txt-part-people-get-wrong">The robots.txt part people get wrong</a></li><li><a href="#what-this-changes">What this changes</a></li></ol></nav>
+ <div><div class="prose"><p>The sentence collapses three different systems into one. Once you separate them, the advice gets narrower, cheaper and easier to act on.</p>
+
+<h2 id="three-fetch-paths">Three fetch paths</h2>
+
+<p><strong>Dedicated HTTP crawlers.</strong> OpenAI's GPTBot, OAI-SearchBot and ChatGPT-User. Anthropic's ClaudeBot, Claude-User and Claude-SearchBot. PerplexityBot and Perplexity-User. Meta-ExternalAgent, Bytespider. These pull raw HTML. There's no evidence any of them run JavaScript, and I'll get to how thin that evidence is.</p>
+
+<p><strong>Rendering crawlers.</strong> Googlebot renders with headless Chromium and always has. Apple is even more explicit, and almost nobody quotes it: <em>"Applebot may render the content of your website within a browser."</em> That is Apple's own documentation, and it goes on to warn that blocking JS or CSS in robots.txt will stop it rendering properly.</p>
+
+<p><strong>Agentic browsers.</strong> Perplexity Comet, ChatGPT agent mode, Claude in Chrome. These drive a real browser. Everything runs.</p>
+
+<h2 id="why-the-google-part-matters-most">Why the Google part matters most</h2>
+
+<p>Google's own guidance on AI features says a page qualifies as a supporting link in AI Overviews and AI Mode by being <em>indexed and eligible to be shown in Google Search</em>. Indexing is the whole bar. AI Overviews are served off the Search index, and that index is built by a crawler that renders.</p>
+
+<p>So the honest version of the claim is narrower and more useful:</p>
+
+<blockquote class="pull">A client-rendered page can rank in Google, qualify for an AI Overview, and still be absent from ChatGPT, Claude and Perplexity.</blockquote>
+
+<p>That is a problem worth fixing. Most articles pitch a bigger one, total invisibility to AI, and the evidence does not support it. Google is where most AI-answer impressions happen, and Google can see you.</p>
+
+<h2 id="the-evidence-is-thinner-than-the-confidence">The evidence is thinner than the confidence</h2>
+
+<p>Chasing the citation changed how I talk about this. I went looking for the source of "AI crawlers do not execute JavaScript" and it is, essentially, one study: Vercel and MERJ, published <time datetime="2024-12-17">17 December 2024</time>. Roughly 569 million GPTBot requests, 370 million from Claude. JS files were fetched and not executed.</p>
+
+<p>Good study. But it's from December 2024, it ran mostly on a JavaScript framework's own documentation site, and there is no published replication. Twenty months later every 2026 article still cites it, several while claiming that vendor documentation confirms it.</p>
+
+<p>It does not. I read OpenAI's bot documentation end to end. It lists four bots, their user agents, their robots.txt tokens and their IP ranges. It says nothing about rendering, JavaScript or the DOM.</p>
+
+<p>The only vendor sentence I could find is Anthropic's, and it has a scope people miss. Their API docs say the web fetch tool <em>"currently does not support websites dynamically rendered with JavaScript"</em>. That documents the developer-facing fetch tool. The ClaudeBot crawler fleet is a separate system, and the sentence says nothing about it. It is strong evidence about Anthropic's retrieval stack and weaker evidence about the crawlers.</p>
+
+<p>The widely repeated "69% of AI crawlers cannot execute JavaScript" is worse. It is a traffic-share number from that same dataset, describing what proportion of requests came from non-rendering bots on those specific properties. It gets restated as a property of crawlers, which is a different claim that nobody has supported.</p>
+
+<h2 id="what-i-check-on-the-page-itself">What I check on the page itself</h2>
+
+<p>Fetch your own page as each bot and read what comes back. It takes a minute and it beats every article on the subject, including this one.</p>
+
+<div class="code"><div class="cb"><span class="mono">Terminal · fetch as GPTBot</span><button type="button" data-copy>Copy</button></div><pre tabindex="0"><code><span class="k">curl</span> <span class="c">-sL</span> https://example.com \
+  <span class="c">-A</span> <span class="s">"Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot"</span> \
+  | <span class="k">grep</span> <span class="c">-c</span> <span class="s">"the sentence you need to be found for"</span></code></pre></div>
+
+<p>Zero means the words are not in the served HTML. That's the test that decides it, and it answers the question for your page.</p>
+
+<p>Two things the usual advice misses. Ctrl-F on view-source resolves less than people think, because for a lot of patterns the text <em>is</em> in the source and still never gets used: content inside <code>&lt;details&gt;</code>, panels behind <code>display:none</code>, anything past a lazy-loading boundary. And nobody separates the user agents. GPTBot builds a training corpus, OAI-SearchBot builds a search index, ChatGPT-User fetches live when someone asks a question. They do structurally different jobs and get tested as one blob.</p>
+
+<h2 id="the-robots-txt-part-people-get-wrong">The robots.txt part people get wrong</h2>
+
+<p>Two robots.txt tokens look like crawlers. Both are usage permissions.</p>
+
+<ul>
+<li><strong>Google-Extended</strong> has no user agent and fetches nothing. Google's documentation is blunt: it "does not impact a site's inclusion in Google Search nor is it used as a ranking signal". It governs Gemini training and grounding. Blocking it does not remove you from AI Overviews.</li>
+<li><strong>Applebot-Extended</strong> likewise "does not crawl webpages". It only decides how already-crawled data may be used.</li>
+</ul>
+
+<p>Perplexity's own documentation says Perplexity-User "generally ignores robots.txt rules", on the grounds that a person asked for the page. Anthropic, by contrast, makes an unqualified plural commitment that its bots honour robots.txt, with no carve-out for the user-triggered one.</p>
+
+<h2 id="what-this-changes">What this changes</h2>
+
+<p>If your site is server-rendered, none of this is your problem and you can stop reading AEO checklists. If it is a client-rendered app, the diagnosis is narrower than "AI cannot see you": a specific, nameable set of crawlers cannot, Google can, and the cheapest move is to serve the content those crawlers need as HTML.</p>
+
+<p class="lede-end">The sentence I removed from this site was directionally right and precisely wrong. Precisely wrong is how you end up rebuilding something that was working.</p></div>
+  <div class="related"><p class="mono lbl">Related reading</p>
+   <a href="https://yar.website/resources/what-webflow-ships-in-html">What does Webflow actually put in your HTML?<span>→</span></a>
+   <a href="https://yar.website/resources/static-html-from-a-react-host">How does this site ship static HTML from a React host?<span>→</span></a></div>
+  <p class="signed"><span class="face"><img src="assets/brand/portrait.jpg" alt=""></span>Written by Yar</p>
+ </div></div></section>
+<div class="blinds" aria-hidden="true" style="--from:#CDCDCA;--to:#050608"><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i><i style="height:8.3333%"></i></div>
+<section class="close-band">
+  <div><p class="mono lbl">Free 30-minute call</p><p class="big split">Fetch your own page as each bot and read what comes back.</p><div class="next"><div class="next-chips"><span class="mono lbl">Next</span><a class="chip2" href="answer-what-is-aeo.html"><span class="star">✦</span><span class="t">How is AEO different from SEO?</span></a><a class="chip2" href="https://yar.website/tools"><span class="star">✦</span><span class="t">What tools do you use?</span></a><a class="chip2" href="contact.html"><span class="star">✦</span><span class="t">Are you available?</span></a></div></div></div>
+  <div class="acts"><a class="btn " href="https://cal.com/yaroshidi/discovery"><span class="t">Book your free 30-minute call</span><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+</section>
+</main>
+<footer class="foot" id="contact">
+  <div class="smoke" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <div class="top"><span class="cap">Free 30-minute call</span><span class="cap">DXB → <span data-clock>--:--</span></span></div>
+  <div class="grid">
+    <div>
+      <h2 class="display split">Want to know what your website should fix first?</h2>
+      <div class="left-meta cap"><span>© 2026 YAR Innovative Solutions FZCO</span><span>Dubai, United Arab Emirates</span></div>
+    </div>
+    <div class="right rv">
+      <a class="mlink" href="https://cal.com/yaroshidi/discovery"><span class="t">Book a call with Yar</span><span class="ar">→</span></a>
+      <a class="mlink" href="answers.html" data-ask-open><span class="t">Ask a question first</span><span class="ar">→</span></a>
+      <div class="meta">
+        <div><div class="cap">Business enquiry</div><a href="mailto:yar@yar.website">E. yar@yar.website</a><br><span style="color:var(--mute)">Replies within 12 hours, Dubai time.</span></div>
+        <div><div class="cap">Social</div><div class="soc"><a href="https://www.linkedin.com/in/yaroshidi/">LinkedIn</a><a href="https://www.youtube.com/@yaroshidi">YouTube</a><a href="https://github.com/yaroshidi">GitHub</a><a href="https://webflow.com/@yar">Webflow</a></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="word" aria-hidden="true" id="word">Yar.website</div>
+</footer>
+<div class="ask" id="ask">
+  <button class="ask-pill" id="askPill" type="button" aria-label="Ask me anything" aria-expanded="false" aria-controls="askPanel" aria-keyshortcuts="/ Control+K Meta+K"><span class="star" aria-hidden="true">✦</span><span class="ph" aria-hidden="true">Ask me anything…</span><kbd aria-hidden="true">/</kbd><span class="ask-go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+  <section class="ask-panel" id="askPanel" role="dialog" aria-modal="true" aria-labelledby="askTitle" aria-hidden="true" inert>
+    <header class="ask-head" style="--k:0"><span class="ask-mark" aria-hidden="true"><svg viewBox="0 0 160 169" aria-hidden="true"><path d="M158.983 4.29278C159.729 5.6484 160.064 7.07933 159.99 8.58556C159.915 10.0918 159.43 11.4474 158.535 12.6524L96.5582 103.027V161.092C96.5582 163.201 95.7751 165.046 94.2089 166.628C92.6427 168.209 90.8155 169 88.7272 169H71.4988C69.2614 169 67.3596 168.209 65.7934 166.628C64.2271 165.046 63.444 163.201 63.444 161.092V94.8931C63.444 93.3868 63.9661 91.8806 65.0102 90.3743L124.75 3.38904C125.496 2.33467 126.428 1.50624 127.547 0.903743C128.666 0.301247 129.896 0 131.239 0H152.047C153.539 0 154.918 0.376559 156.186 1.12968C157.454 1.8828 158.386 2.93717 158.983 4.29278ZM64.7865 53.9987C64.1898 55.3543 63.2576 56.4087 61.9897 57.1618C60.7218 57.9149 59.342 58.2914 57.8504 58.2914H37.0422C34.3572 58.2914 32.1198 57.1618 30.3298 54.9024L1.24303 12.6524C0.49721 11.4474 0.0870118 10.0918 0.0124303 8.58556C-0.0621513 7.07933 0.198884 5.6484 0.795536 4.29278C1.39219 2.93717 2.32446 1.8828 3.59234 1.12968C4.86023 0.376559 6.23999 0 7.73162 0H28.7636C31.2994 0 33.4622 1.12968 35.2522 3.38904L64.339 45.639C65.0848 46.844 65.495 48.1996 65.5696 49.7059C65.6442 51.2121 65.3832 52.6431 64.7865 53.9987Z" fill="currentColor"/></svg></span><div><h2 id="askTitle">Ask Yar</h2><p class="mono">Answers from yar.website</p></div><button class="pill" id="askClose" type="button" aria-label="Close chat">Close ✕</button></header>
+    <div class="ask-log" id="askLog" role="log" aria-live="polite" aria-label="Conversation" tabindex="-1" data-lenis-prevent style="--k:1"></div>
+    <form class="ask-form" id="askForm" action="https://yar.website/ask" method="get" autocomplete="off" style="--k:2"><label class="sr" for="askInput">Your question</label><input class="ask-hp" id="askHp" name="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"><input id="askInput" name="q" type="text" placeholder="Ask me anything…" enterkeyhint="send" maxlength="300" autocomplete="off"><button class="ask-send" type="submit" aria-label="Send question"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></form>
+    <p class="ask-note mono" style="--k:3">Prototype · scripted answers from yar.website</p>
+  </section>
+</div>
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script defer src="assets/js/ask.js"></script>
+<script defer src="assets/site.js"></script>
+</body>
+</html>
