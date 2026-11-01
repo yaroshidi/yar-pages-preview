@@ -823,3 +823,25 @@ html.js:not(.static) .intro-rv,html.js:not(.static) .hdr{opacity:0}
 .ct-hero .crumb{margin-bottom:28px}
 @media (max-width:900px){.cal .ch>.mono{display:none}.ct-hero .top{flex-direction:column;align-items:flex-start}.ct-hero .top p{text-align:left}}
 @media (max-width:900px){.cs-hero h1{font-size:9.4vw;white-space:normal}}
+
+/* ---- copy deck v1 additions ---- */
+.foot .right .lede{font-size:16px;line-height:1.35;max-width:32ch;color:var(--ink);margin-bottom:36px}
+.incl .grid.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.who6{padding:var(--s-7) var(--pad) var(--s-8)}
+.who6 .grid{display:grid;margin-left:var(--colg);grid-template-columns:repeat(3,minmax(0,1fr));margin-top:var(--s-6);border-top:1px solid var(--line-d)}
+.who6 .grid>div{padding:28px 24px 36px;border-bottom:1px solid var(--line-d);border-left:1px solid var(--line-d)}
+.who6 .grid>div:nth-child(3n+1){border-left:0;padding-left:0}
+.who6 .grid .mono{display:flex;align-items:center;gap:12px;color:#6a6a67}
+.who6 .tg{padding:4px 9px;border:1px solid var(--line-d);border-radius:99px}
+.who6 .me .tg{background:var(--ink-dd);border-color:var(--ink-dd);color:#EDEDEB}
+.who6 h3{margin-top:40px;font-family:var(--f-display);font-weight:400;font-size:clamp(24px,2.1vw,30px);letter-spacing:-.04em;line-height:1.05;color:var(--ink-dd)}
+.who6 .d{margin-top:14px;font-size:15.5px;line-height:1.5;color:var(--ink-d);max-width:36ch}
+.ai-rows .sec-h{padding-top:var(--s-7);padding-bottom:var(--s-5)}
+@media (max-width:900px){
+  .foot .right .lede{margin-bottom:28px}
+  .incl .grid.g5{grid-template-columns:1fr 1fr}
+  .incl .grid.g5>div:last-child:nth-child(odd){grid-column:1/-1}
+  .who6 .grid{grid-template-columns:1fr;margin-left:0}
+  .who6 .grid>div,.who6 .grid>div:nth-child(3n+1){padding:22px 0 26px;border-left:0}
+  .who6 h3{margin-top:24px}
+}
